@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "utf-8"> 
+        <title> home </title> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="estilos/tgif.css">
+    	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
+    </head>
+    <body>
+		
+        <div class="container">
+             <header>
+                <div class="clearfix">
+                    <div class="float-left">
+                        <a href="index.html"><img src="img/logo.png" alt="congress logo"></a>
+                    </div>           
+                    <div class="float-right email">
+                    <i class="far fa-envelope"></i>
+                    <a  href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment"> info@tgif.net </a>
+                    </div>
+                  </div>
+            </header>
+            <nav class="navbar  navbar-expand-md navbar-dark bg-dark">
+                 <button class="navbar-toggler " type="button" data-toggle="collapse"                              data-target="#collapsibleNavbar" >
+                        <span class="navbar-toggler-icon"></span>
+                 </button>
+                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="navbar-item ">
+                            <a href="home.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="navbar-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" role="button" href="#" >Congress 113</a>
+                          
+                          <div class="dropdown-menu" aria-labelledby="navbardrop">
+                              <a class="dropdown-item"  href="senate-data.html">Senate</a>
+                              <a class="dropdown-item" href="house-data.html">House</a>
+                          </div>     
+                       </li>
+                        
+                       <li class="navbar-item dropdown">
+                           <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" role="button" href="#">Attendance</a>
+                            <div class="dropdown-menu" aria-labelledby="navbardrop">
+                                 <a class="dropdown-item" href="senate-attendance.html">Senate</a>
+                                 <a class="dropdown-item" href="house-attendance.html">House</a>
+                           </div>
+                      </li>  
+                        
+                      <li class="navbar-item dropdown">
+                          <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" role="button" href="#">Party Loyalty</a>
+                          <div class="dropdown-menu" aria-labelledby="navbardrop">
+                                <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+                                <a class="dropdown-item" href="house-party-loyalty.html">House</a>
+                          </div>
+                      </li>
+                    </ul>
+                 </div>
+            </nav>        
+
+            <!--Table container-->
+            <div class="row">
+            
+                <div class="text col-8"> 
+                    <h2>About Us</h2>
+                    <p>Openness, accountability, and honesty define government transparency. In a free society, transparency is government's obligation to share information with citizens. It is at the heart of how citizens hold their public officials accountable. Here at TGIF we believe that government should be transparent.</p>  
+                    <p>Governments exist to serve the people. Information on how officials conduct the public business and spend taxpayer money must be readily available and easily understood. This transparency allows good and just governance.  Transparency promotes accountability and provides information for citizens about what their Government is doing.</p>  
+                    <p>We also believe that government should be participatory. Public engagement enhances the Government's effectiveness and improves the quality of its decisions. Knowledge is widely dispersed in society, and public officials benefit from having access to that dispersed knowledge. We invite you to use our site to become actively engaged in American government.</p>
+                    <p>TGIF works to disclose information in forms that the public can readily find and use. We solicit public feedback to identify information of greatest use to the public.</p>
+                    
+                    <button data-toggle="collapse" data-target="#demo" class="btn btn-primary mx-auto">Read More</button>
+                    <div id="demo" class="collapse">
+                        <div class="card-body">
+                            <h3>Background History of Government Transparency</h3>
+                            <p>In the West, the idea that government should be open to public scrutiny and susceptible to public opinion dates back at least to the time of the Enlightenment, when many philosophes made an attack on absolutist doctrine of state secrecy, a core part of their intellectual project. The passage of formal legislative instruments to this end can also be traced to this time with Sweden, for example, (which then included Finland as a Swedish-governed territory) enacting free press legislation as part of its constitution (Freedom of the Press Act, 1766). This approach, and that of the philosophes more broadly, is strongly related to recent historiography on the eighteenth-century public sphere.
+
+                                <p>Influenced by Enlightenment thought, the revolutions in America (1776) and France (1789), freedom of the press enshrined provisions and requirements for public budgetary accounting and freedom of the press in constitutional articles. In the nineteenth century, attempts by Metternichean statesmen to row back on these measures were vigorously opposed by a number of eminent liberal politicians and writers, Bentham, Mill and Acton prominent among the latter.</p>
+
+                                <p>Open government is widely seen to be a key hallmark of contemporary democratic practice and is often linked to the passing of freedom of information legislation. Scandinavian countries claim to have adopted the first freedom of information legislation, dating the origins of its modern provisions to the eighteenth century and Finland continuing the presumption of openness after gaining independence in 1917, passing its Act on Publicity of Official Documents in 1951 (superseded by new legislation in 1999).</p>
+
+                                <p>The United States passed its Freedom of Information Act (FOIA) in 1966, FOIAs, Access to Information Acts (AIAs) or equivalent laws were passed in Denmark and Norway in 1970.</p>
+                            </div>
+                    </div>
+                </div> 
+                <div class="col">
+                <img class="grafico rounded-circle " src="img/img-home.jpg" alt="grafico">
+                </div>
+            </div>
+            <div class="bg-dark text-light footer">
+                <i class="far fa-copyright"></i> 2016 TGIF | All Rights Reserved
+            </div>
+        </div>
+     <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        
+<!-- VUE -->  
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!-- tarea6 -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>	
+
+</body>
+</html>

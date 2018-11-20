@@ -1,0 +1,33 @@
+img {
+    height: 100px;
+    width: 100px;
+    }
+.text {
+        margin-top: 80px;
+      }
+.email {
+        padding-top: 30px;
+       }
+nav li {
+        list-style-type: none;
+}
+nav ul {
+        padding-left: 0;
+        }
+nav > ul {
+        padding-top: 20px;
+        }
+.grafico{
+         height: 200px;
+         width: 200px;
+         margin-top: 200px;
+         }
+.footer {
+        padding-top: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+        margin-top: 20px;
+}
+.states {
+        float: right;
+}

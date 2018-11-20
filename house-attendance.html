@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "utf-8"> 
+        <title> attendance </title> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="estilos/tgif.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
+    </head>
+    
+    <body>
+		<div id="house" class="congress"></div>
+        <div class="container" id="app">
+             <header>
+                <div class="clearfix">
+                    <div class="float-left">
+                        <a href="index.html"><img src="img/logo.png" alt="congress logo"></a>
+                    </div>           
+                    <div class="float-right email">
+                    <i class="far fa-envelope"></i>
+                    <a  href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment"> info@tgif.net </a>
+                    </div>
+                  </div>
+            </header>
+               <nav class="navbar  navbar-expand-md navbar-dark bg-dark">
+                 <button class="navbar-toggler " type="button" data-toggle="collapse"                              data-target="#collapsibleNavbar" >
+                        <span class="navbar-toggler-icon"></span>
+                 </button>
+                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="navbar-item ">
+                            <a href="home.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="navbar-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbardrop-congress113" data-toggle="dropdown" role="button" href="#" >Congress 113</a>
+                          
+                          <div class="dropdown-menu" aria-labelledby="navbardrop-congress113">
+                              <a class="dropdown-item"  href="senate-data.html">Senate</a>
+                              <a class="dropdown-item" href="house-data.html">House</a>
+                          </div>     
+                       </li>
+                        
+                       <li class="navbar-item dropdown">
+                           <a class="nav-link dropdown-toggle" id="navbardrop-attendance" data-toggle="dropdown" role="button" href="#">Attendance</a>
+                            <div class="dropdown-menu" aria-labelledby="navbardrop-attendance">
+                                 <a class="dropdown-item" href="senate-attendance.html">Senate</a>
+                                 <a class="dropdown-item" href="house-attendance.html">House</a>
+                           </div>
+                      </li>  
+                        
+                      <li class="navbar-item dropdown">
+                          <a class="nav-link dropdown-toggle" id="navbardrop-loyalty" data-toggle="dropdown" role="button" href="#">Party Loyalty</a>
+                          <div class="dropdown-menu" aria-labelledby="navbardrop-loyalty">
+                                <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+                                <a class="dropdown-item" href="house-party-loyalty.html">House</a>
+                          </div>
+                      </li>
+                    </ul>
+                 </div>
+            </nav>         
+
+            <!--Table container-->
+            <div class="row justify-content-between">
+                <div class="text col-7 text-justify">
+                    <h2>Attendance</h2>
+                    <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
+
+                    <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
+                </div>
+                <div class=" text col-5 text-center">
+                    <h5>House at a glance</h5>
+                    <table class="table table-bordered table-responsive-sm">
+                       <thead>
+								<tr>
+									<th>Party</th>
+									<th>No. of Reps </th>
+									<th>% Voted w/ Party</th>
+								</tr>
+							</thead> 
+							<tbody>
+								<tr>
+									<td>Democrats</td>
+									<td>{{info.numberDemocrats}}</td>
+									<td>{{info.votedDemocrats}}</td>
+								</tr>
+								<tr>
+									<td>Republicans</td>
+									<td>{{info.numberRepublicans}}</td>
+									<td>{{info.votedRepublicans}}</td>
+								</tr>
+								<tr>
+									<td>Independents</td>
+									<td>{{info.numberIndependents}}</td>
+									<td>{{info.votedIndependet}}</td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td>{{info.numberTotal}}</td>
+									<td>{{info.votedTotal}}</td>
+								</tr>
+							</tbody> 
+                    </table>
+                </div>
+            </div>
+            <div class="row justify-content-between">   
+                <div class="col-6 text-center">
+                    <h5>Least Engaged (Bottom 10% Attendance)</h5>
+                    <table class="table table-bordered table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th> Name </th>
+                                <th> No. Missed Votes </th>
+                                <th> % Missed </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+							<tr v-for="(value, key) in info.leastEngaged">
+									<td><a v-bind:href="value.url">{{value.first_name}} {{(value.middle_name ||"")}} {{value.last_name}}</a></td>
+									<td>{{value.missed_votes}}</td>
+									<td>{{value.missed_votes_pct}}</td>
+								</tr>
+						</tbody>
+                    </table>
+                </div>
+                <div class="col-6 text-center">
+                    <h5>Most Engaged (Top 10% Attendance)</h5>
+                    <table class="table table-bordered table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th> Name </th>
+                                <th> No. Missed Votes </th>
+                                <th> % Missed </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+							<tr v-for="(value, key) in info.mostEngaged">
+									<td><a v-bind:href="value.url">{{value.first_name}} {{(value.middle_name ||"")}} {{value.last_name}}</a></td>
+									<td>{{value.missed_votes}}</td>
+									<td>{{value.missed_votes_pct}}</td>
+								</tr>
+						</tbody>
+                    </table>
+                </div>
+            </div>
+                <div class="bg-dark text-light footer">
+                    <i class="far fa-copyright"></i> 2016 TGIF | All Rights Reserved
+                </div>
+        
+        </div>
+     <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- VUE -->  
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!-- tarea6 -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
+		
+<!-- script src="house.js"></script -->
+<script src="statistics.js"></script>
+</body>
+</html>
+
